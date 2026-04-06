@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A free 16-week strength program with automatic calorie targets, daily workout tracking, and progress analytics. Set up in 2 minutes. No download needed." />
+  <title>FitTrack — Stop Winging It. Follow a Plan That Works.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg:     '#080b10',
+            bg1:    '#0e1117',
+            bg2:    '#161b24',
+            bg3:    '#1e2532',
+            border: '#232b38',
+            accent: '#22c55e',
+            warn:   '#f59e0b',
+            info:   '#60a5fa',
+            purple: '#a78bfa',
+            danger: '#ef4444',
+            text1:  '#f1f5f9',
+            text2:  '#94a3b8',
+            text3:  '#64748b',
+          },
+          fontFamily: {
+            sans:      ['"Barlow"', 'system-ui', 'sans-serif'],
+            condensed: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            card: '16px',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { background: #080b10; color: #f1f5f9; font-family: 'Barlow', system-ui, sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-btn {
+      background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+      transition: opacity 0.15s;
+    }
+    .gradient-btn:hover { opacity: 0.88; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chevron { transform: rotate(90deg); }
+    .chevron { transition: transform 0.15s; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- ── Nav ── -->
+  <nav class="sticky top-0 z-50 border-b border-border px-5 py-3.5" style="background: rgba(8,11,16,0.85); backdrop-filter: blur(12px);">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <span class="font-condensed text-2xl font-black gradient-text tracking-tight">FitTrack</span>
+      <div class="flex items-center gap-3">
+        <a href="https://app.fittrack.io/sign-in" class="text-sm text-text3 hover:text-text1 transition-colors">Sign in</a>
+        <a href="https://app.fittrack.io/sign-in" class="gradient-btn text-sm font-bold px-4 py-2 text-black rounded-xl">
+          Start Free
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-5">
+
+    <!-- ── Hero ── -->
+    <section class="pt-16 pb-14 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/20 text-accent text-xs font-bold mb-6" style="background: rgba(34,197,94,0.08);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Free forever to start &middot; No download needed
+      </div>
+      <h1 class="font-condensed text-5xl sm:text-6xl font-black leading-tight mb-4">
+        Stop Winging It.<br />
+        <span class="gradient-text">Follow a Plan That Works.</span>
+      </h1>
+      <p class="text-text2 text-lg leading-relaxed max-w-xl mx-auto mb-8">
+        FitTrack gives you a structured strength program, automatic calorie targets,
+        and daily tracking &mdash; all in one free app that lives on your phone.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="https://app.fittrack.io/sign-in"
+          class="gradient-btn flex items-center gap-2 px-7 py-4 text-black font-bold rounded-2xl text-base w-full sm:w-auto justify-center">
+          Start Your Free Program
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <span class="text-xs text-text3">No credit card &middot; 2-minute setup</span>
+      </div>
+    </section>
+
+    <!-- ── Feature strip ── -->
+    <section class="mb-14">
+      <div class="bg-bg1 border border-border rounded-card p-5">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="rounded-2xl p-3.5 border border-accent/20" style="background:rgba(34,197,94,0.06)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><path d="M6.5 6.5h11"/><path d="M6.5 17.5h11"/><path d="M3 12h18"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            <div class="font-condensed text-lg font-black text-text1">4 days/week</div>
+            <div class="text-xs text-text3 uppercase font-bold tracking-wider mt-0.5">Workout Log</div>
+          </div>
+          <div class="rounded-2xl p-3.5 border border-warn/20" style="background:rgba(245,158,11,0.06)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+            <div class="font-condensed text-lg font-black text-text1">Auto TDEE</div>
+            <div class="text-xs text-text3 uppercase font-bold tracking-wider mt-0.5">Nutrition</div>
+          </div>
+          <div class="rounded-2xl p-3.5 border border-info/20" style="background:rgba(96,165,250,0.06)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <div class="font-condensed text-lg font-black text-text1">PRs + Charts</div>
+            <div class="text-xs text-text3 uppercase font-bold tracking-wider mt-0.5">Progress</div>
+          </div>
+          <div class="rounded-2xl p-3.5 border border-purple/20" style="background:rgba(167,139,250,0.06)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+            <div class="font-condensed text-lg font-black text-text1">Weekly check-in</div>
+            <div class="text-xs text-text3 uppercase font-bold tracking-wider mt-0.5">Streak</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Problem ── -->
+    <section class="mb-14 text-center">
+      <h2 class="font-condensed text-3xl font-black mb-4">Most People Don't Have a Bad Work Ethic.<br />They Have No Plan.</h2>
+      <p class="text-text2 text-base leading-relaxed max-w-lg mx-auto">
+        You show up, do <em>something</em>, and three months later you're not sure if you're
+        actually stronger or just tired. Random workouts don't compound. Random eating doesn't either.
+        Without structure, you're leaving most of your results on the table.
+      </p>
+    </section>
+
+    <!-- ── Benefits bento ── -->
+    <section class="mb-14">
+      <h2 class="font-condensed text-3xl font-black mb-6 text-center">Everything You Need. Nothing You Don't.</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+        <div class="sm:col-span-2 bg-bg1 border border-border rounded-card p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 border border-accent/20" style="background:rgba(34,197,94,0.08)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11"/><path d="M6.5 17.5h11"/><path d="M3 12h18"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="font-condensed text-xl font-black mb-1">A Complete Program, Not a Blank Spreadsheet</div>
+            <div class="text-text2 text-sm leading-relaxed">Four structured gym days per week, automatically mapped to your schedule. Every exercise includes sets, rep ranges, rest times, and a form cue. You're told exactly when to add weight and when to back off.</div>
+          </div>
+        </div>
+
+        <div class="bg-bg1 border border-border rounded-card p-5">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 border border-warn/20" style="background:rgba(245,158,11,0.08)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          </div>
+          <div class="font-condensed text-lg font-black mb-1">Calories Calculated for You</div>
+          <div class="text-text2 text-sm leading-relaxed">Enter your weight and height. FitTrack sets your gym-day and rest-day targets using your TDEE. Adjust if you want &mdash; or leave it on auto.</div>
+        </div>
+
+        <div class="bg-bg1 border border-border rounded-card p-5">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 border border-info/20" style="background:rgba(96,165,250,0.08)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="font-condensed text-lg font-black mb-1">PR Detection. Always.</div>
+          <div class="text-text2 text-sm leading-relaxed">Every set is checked against your history. Hit a new personal record and it's flagged instantly — with a running table in your Progress tab.</div>
+        </div>
+
+        <div class="bg-bg1 border border-border rounded-card p-5">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 border border-purple/20" style="background:rgba(167,139,250,0.08)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="font-condensed text-lg font-black mb-1">Track What Actually Matters</div>
+          <div class="text-text2 text-sm leading-relaxed">Workouts, meals, weight, and body measurements in one place. Consistency score, streaks, and weekly summaries every Sunday.</div>
+        </div>
+
+        <div class="bg-bg1 border border-border rounded-card p-5">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 border border-accent/20" style="background:rgba(34,197,94,0.08)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="font-condensed text-lg font-black mb-1">Lives on Your Home Screen</div>
+          <div class="text-text2 text-sm leading-relaxed">FitTrack is a PWA. Add it to your home screen in one tap. Works offline. No app store, no subscriptions to start.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Phases ── -->
+    <section class="mb-14">
+      <h2 class="font-condensed text-3xl font-black mb-2 text-center">4 Phases. One Continuous Build.</h2>
+      <p class="text-text2 text-sm text-center mb-7">Each phase shifts focus as your body adapts. You get coaching cues every week.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="rounded-2xl p-4 border border-info/15" style="background:rgba(96,165,250,0.05)">
+          <div class="text-2xl mb-2">🏗</div>
+          <div class="font-condensed text-base font-black text-info">Foundation</div>
+          <div class="text-xs text-text3 uppercase font-bold tracking-wider mb-2">Wks 1–4</div>
+          <div class="text-xs text-text2 leading-snug">Form over load. Film your big lifts.</div>
+        </div>
+        <div class="rounded-2xl p-4 border border-accent/15" style="background:rgba(34,197,94,0.05)">
+          <div class="text-2xl mb-2">📈</div>
+          <div class="font-condensed text-base font-black text-accent">Build</div>
+          <div class="text-xs text-text3 uppercase font-bold tracking-wider mb-2">Wks 5–8</div>
+          <div class="text-xs text-text2 leading-snug">Progressive overload kicks in. Add 2.5 kg.</div>
+        </div>
+        <div class="rounded-2xl p-4 border border-warn/15" style="background:rgba(245,158,11,0.05)">
+          <div class="text-2xl mb-2">💪</div>
+          <div class="font-condensed text-base font-black text-warn">Strength</div>
+          <div class="text-xs text-text3 uppercase font-bold tracking-wider mb-2">Wks 9–12</div>
+          <div class="text-xs text-text2 leading-snug">RPE 8–9. Push compounds. PRs should peak.</div>
+        </div>
+        <div class="rounded-2xl p-4 border border-purple/15" style="background:rgba(167,139,250,0.05)">
+          <div class="text-2xl mb-2">🏆</div>
+          <div class="font-condensed text-base font-black text-purple">Peak</div>
+          <div class="text-xs text-text3 uppercase font-bold tracking-wider mb-2">Wks 13–16</div>
+          <div class="text-xs text-text2 leading-snug">Deload, then peak intensity. Leave it all.</div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-text3 mt-4">Choose 8, 10, 12, 16, or 20 weeks &mdash; phases always scale to your length.</p>
+    </section>
+
+    <!-- ── What you get ── -->
+    <section class="mb-14 bg-bg1 border border-border rounded-card p-6">
+      <div class="flex items-center gap-3 mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h2 class="font-condensed text-2xl font-black">Everything Free to Start</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-y-2 gap-x-6">
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          16-week structured program (4 days/week)
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Auto TDEE calorie + protein targets
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Daily workout, meal &amp; weight logging
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          PR detection and consistency tracking
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Body measurements with progress chart
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Streak tracking &amp; weekly check-ins
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Coach notes pad (per week)
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          PWA — offline, any device, no install
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Progress photo timeline
+        </div>
+        <div class="flex items-center gap-2.5 text-sm text-text2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+          Shareable weekly stats card
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="mb-14">
+      <h2 class="font-condensed text-3xl font-black mb-5 text-center">Common Questions</h2>
+      <div class="space-y-3">
+
+        <details class="bg-bg1 border border-border rounded-card overflow-hidden">
+          <summary class="flex items-center justify-between p-4 font-semibold text-sm select-none">
+            I'm not sure 16 weeks is right for me.
+            <svg class="chevron flex-shrink-0 ml-3 text-text3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-text2 leading-relaxed">You pick the length — 8 weeks if you want to start small, up to 20 if you're planning ahead. You can also set a past start date to pick up mid-program.</div>
+        </details>
+
+        <details class="bg-bg1 border border-border rounded-card overflow-hidden">
+          <summary class="flex items-center justify-between p-4 font-semibold text-sm select-none">
+            I already use MyFitnessPal / a spreadsheet.
+            <svg class="chevron flex-shrink-0 ml-3 text-text3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-text2 leading-relaxed">FitTrack connects your workouts, nutrition, measurements, and progress in one place — tied to a structured program with a defined endpoint. Fewer tabs, more signal.</div>
+        </details>
+
+        <details class="bg-bg1 border border-border rounded-card overflow-hidden">
+          <summary class="flex items-center justify-between p-4 font-semibold text-sm select-none">
+            Is it actually free?
+            <svg class="chevron flex-shrink-0 ml-3 text-text3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-text2 leading-relaxed">Yes. Sign up with Google or email, setup takes under 2 minutes, no credit card. A Pro tier is coming — early users get grandfathered in.</div>
+        </details>
+
+        <details class="bg-bg1 border border-border rounded-card overflow-hidden">
+          <summary class="flex items-center justify-between p-4 font-semibold text-sm select-none">
+            Do I need any gym experience?
+            <svg class="chevron flex-shrink-0 ml-3 text-text3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </summary>
+          <div class="px-4 pb-4 text-sm text-text2 leading-relaxed">No. Every exercise has a form cue and recommended starting weight. The Foundation phase is specifically designed to build the habit and technique before adding load.</div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ── Final CTA ── -->
+    <section class="mb-20">
+      <div class="rounded-3xl p-8 text-center border border-accent/15" style="background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(96,165,250,0.04) 100%);">
+        <div class="flex justify-center gap-3 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </div>
+        <h2 class="font-condensed text-4xl font-black mb-3">
+          16 Weeks from Now,<br />
+          <span class="gradient-text">You'll Know Exactly Where You Stand.</span>
+        </h2>
+        <p class="text-text2 text-sm mb-6 max-w-sm mx-auto">Setup takes 2 minutes. No gym knowledge required. No credit card.</p>
+        <a href="https://app.fittrack.io/sign-in"
+          class="gradient-btn inline-flex items-center gap-2 px-8 py-4 text-black font-bold rounded-2xl text-base">
+          Start Your Free Program
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="text-xs text-text3 mt-3">Works on iPhone and Android &middot; Offline-ready PWA</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="border-t border-border py-6 text-center text-xs text-text3">
+    <span class="font-condensed font-bold text-text2">FitTrack</span>
+    &middot; Free strength program tracker &middot; Built for people who show up
+  </footer>
+
+</body>
+</html>
